@@ -9,5 +9,5 @@ WriteMakefile(
                            'Gnome2::VFS' => 1.003 },
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/Gtk2/Ex/Dialogs.pm',
-       AUTHOR         => 'ODS Dev Team <ods-dev@opendoorsoftware.com>') : ()),
+       AUTHOR         => 'Kevin C. Krinke <kckrinke@opendoorsoftware.com>') : ()),
 );

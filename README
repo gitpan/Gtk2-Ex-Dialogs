@@ -1,4 +1,4 @@
-Gtk2-Ex-Dialogs version 0.08
+Gtk2-Ex-Dialogs version 0.09
 ============================
 
 This package contains useful classes for Gnome2/Gtk2 Perl GUI design.
@@ -33,14 +33,10 @@ This package requires Gtk2-Perl available from:
 
  http://gtk2-perl.sourceforge.net
 
-And Gtk2-Ex-Utils available from:
-
- http://gtk2-ex.odsgnulinux.com
-
 COPYRIGHT AND LICENCE
 
 Gtk2::Ex::Dialogs - Useful tools for Gnome2/Gtk2 Perl GUI design.
-Copyright (C) 2004  Open Door Software Inc. <ods@opendoorsoftware.com>
+Copyright (C) 2005  Open Door Software Inc. <ods@opendoorsoftware.com>
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

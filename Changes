@@ -1,5 +1,8 @@
 Revision history for Perl extension Gtk2::Ex::Dialogs.
 
+0.09 - Fri Feb  4 17:39:22 EST 2005
+	- initial public release
+
 0.08 - Tue Sep 28 14:30:48 EDT 2004
 	- initial public release
 

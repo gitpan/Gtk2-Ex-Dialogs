@@ -1,7 +1,7 @@
 package Gtk2::Ex::Dialogs::ChooseFile;
 ###############################################################################
 #  Gtk2::Ex::Dialogs::ChooseFile - Provides a file selection dialog.
-#  Copyright (C) 2004  Open Door Software Inc. <ods@opendoorsoftware.com>
+#  Copyright (C) 2005  Open Door Software Inc. <ods@opendoorsoftware.com>
 #
 #  This library is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU Lesser General Public
@@ -22,7 +22,7 @@ use strict;
 BEGIN {
 	use vars qw( $VERSION $parent_window $title $icon $text
                  $destroy_with_parent $modal $no_separator );
-    $VERSION = '0.08';
+    $VERSION = '0.09';
 }
 
 use Carp;
@@ -282,9 +282,7 @@ __END__
 
 =head1 BUGS
 
-Please report any bugs to the bug tracking system at:
-
- http://bugs.odsgnulinux.com
+Please report any bugs to the mailing list.
 
 =head1 MAILING LIST
 
@@ -299,7 +297,7 @@ Please report any bugs to the bug tracking system at:
 =head1 COPYRIGHT AND LICENSE
 
  Gtk2::Ex::Dialogs::ChooseFile - Provides a file selection dialog.
- Copyright (C) 2004 Open Door Software Inc. <ods@opendoorsoftware.com>
+ Copyright (C) 2005 Open Door Software Inc. <ods@opendoorsoftware.com>
 
  This library is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public
