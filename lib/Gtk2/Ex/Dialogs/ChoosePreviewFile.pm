@@ -22,13 +22,13 @@ use strict;
 BEGIN {
 	use vars qw( $VERSION $parent_window $title $icon $text
                  $destroy_with_parent $modal $no_separator );
-    $VERSION = '0.09';
+    $VERSION = '0.10';
 }
 
 use Carp;
-use Cwd;
+use Cwd 'abs_path';
 use Gtk2;
-use Gnome2::VFS;
+use File::Type;
 use Gtk2::Ex::Constants qw( :truth :pad :pack :align :justify );
 
 sub import {
@@ -187,6 +187,7 @@ sub new {
             my $CWD = getcwd();
             $cfg->{path} =~ s!^\./!$CWD/!;
         }
+        $cfg->{path} = abs_path($cfg->{path});
         if ( -d $cfg->{path} ) { $dialog->set_current_folder( $cfg->{path} ); }
         else                   { $dialog->set_filename( $cfg->{path}       ); }
     } else                     { $dialog->set_current_folder( getcwd()     ); }
@@ -306,13 +307,12 @@ sub _Update_Preview {
             $current_preview = undef;
         }
 
-        my ( $rs, $info ) = Gnome2::VFS->get_file_info( $file_name, [ 'get-mime-type', 'force-slow-mime-type' ] );
-        my $mime_type = $info->{mime_type};
+        my $mime_type = File::Type->mime_type( $file_name );
         unless ( $mime_type ) {
             $dialog->set_preview_widget_active( FALSE );
             $preview_hbox->hide_all();
         } else {
-            if ( $info->{mime_type} =~ m!^image/! ) {
+            if ( $mime_type =~ m!^image/! ) {
                 my $pixbuf = new_from_file Gtk2::Gdk::Pixbuf( $file_name );
                 my $pixbuf_s = $pixbuf->scale_simple( 96, 128, 'nearest' );
                 undef( $pixbuf );
@@ -322,7 +322,7 @@ sub _Update_Preview {
                 $preview_hbox->show_all();
                 $dialog->set_preview_widget_active( TRUE );
             } elsif ( -f $file_name && -r $file_name ) {
-                if ( $info->{mime_type} =~ m!^text/! ) {
+                if ( $mime_type =~ m!^text/! ) {
                     if ( open( PFH, "<" . $file_name ) ) {
                         my @raw = ();
                         for ( my $c = 0; $c < 15; $c++ ) {

@@ -22,11 +22,11 @@ use strict;
 BEGIN {
 	use vars qw( $VERSION $parent_window $title $destroy_with_parent
                  $modal $path $must_exist $_action );
-    $VERSION = '0.09';
+    $VERSION = '0.10';
 }
 
 use Carp;
-use Cwd;
+use Cwd 'abs_path';
 use Gtk2;
 use Gtk2::Ex::Constants qw( :truth :pad :pack :align :justify );
 use File::Basename;
@@ -185,6 +185,7 @@ sub new {
             my $CWD = getcwd();
             $cfg->{path} =~ s!^\./!$CWD/!;
         }
+        $cfg->{path} = abs_path($cfg->{path});
         my $base_path = dirname( $cfg->{path} );
         if ( -d $cfg->{path} ) { $dialog->set_current_folder( $cfg->{path} ); }
         else                   { $dialog->set_current_folder( $base_path   ); }

@@ -23,7 +23,7 @@ BEGIN {
 	use vars qw( $VERSION $parent_window $title $icon $text
                  $destroy_with_parent $modal $no_separator
                  $default_yes );
-    $VERSION = '0.09';
+    $VERSION = '0.10';
 }
 
 use Carp;

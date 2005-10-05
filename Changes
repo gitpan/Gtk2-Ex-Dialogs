@@ -1,5 +1,10 @@
 Revision history for Perl extension Gtk2::Ex::Dialogs.
 
+0.10 - Wed Oct  5 00:17:47 EDT 2005
+    - Fixes from ofey aikon:
+       - switched to File::Type from Gnome2::VFS for mime handling
+       - use abs_path instead of cwd
+
 0.09 - Fri Feb  4 17:39:22 EST 2005
 	- initial public release
 
