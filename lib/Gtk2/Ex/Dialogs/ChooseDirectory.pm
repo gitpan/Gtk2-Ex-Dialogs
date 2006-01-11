@@ -22,11 +22,11 @@ use strict;
 BEGIN {
 	use vars qw( $VERSION $parent_window $title $destroy_with_parent
                  $modal $path $must_exist $_action );
-    $VERSION = '0.10';
+    $VERSION = '0.11';
 }
 
 use Carp;
-use Cwd 'abs_path';
+use Cwd qw( abs_path getcwd );
 use Gtk2;
 use Gtk2::Ex::Constants qw( :truth :pad :pack :align :justify );
 use File::Basename;

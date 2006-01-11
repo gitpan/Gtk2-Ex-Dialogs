@@ -22,7 +22,7 @@ use strict;
 BEGIN {
 	use vars qw( $VERSION $parent_window $title $icon $text
                  $destroy_with_parent $modal $no_separator );
-    $VERSION = '0.10';
+    $VERSION = '0.11';
 }
 
 use Carp;

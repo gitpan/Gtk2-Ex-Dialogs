@@ -22,11 +22,11 @@ use strict;
 BEGIN {
 	use vars qw( $VERSION $parent_window $title $icon $text
                  $destroy_with_parent $modal $no_separator );
-    $VERSION = '0.10';
+    $VERSION = '0.11';
 }
 
 use Carp;
-use Cwd 'abs_path';
+use Cwd qw( abs_path getcwd );
 use Gtk2;
 use File::Type;
 use Gtk2::Ex::Constants qw( :truth :pad :pack :align :justify );
